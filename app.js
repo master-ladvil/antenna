@@ -26,9 +26,11 @@ app.get("/", (req,res) => {
 const url = process.env.url
 
 
-const  connect  =  mongoose.connect(url, { useNewUrlParser: true , useUnifiedTopology: true })
-connect.then(db  =>  {
-    console.log("connected to db")})
+//const  connect  =  mongoose.connect(url, { useNewUrlParser: true , useUnifiedTopology: true })
+//connect.then(db  =>  {
+ //   console.log("connected to db")}
+
+ mongoose.connect(url,{useNewUrlParser : true, useUnifiedTopology: true},() => {console.log("connected to db")})
 
 
 const PORT = process.env.port || 4500
