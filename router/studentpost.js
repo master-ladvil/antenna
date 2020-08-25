@@ -12,7 +12,7 @@ router.get("/", rockverify, async (req,res) => {
 })
 
 router.get('/:studentName',  async(req,res) => {
-    const findonestud = postmod.findOne({studentName : req.params.studentName})
+    const findonestud = await postmod.findOne({studentName : req.params.studentName})
     res.json(findonestud)
 })
 
