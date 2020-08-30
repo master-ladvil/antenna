@@ -12,6 +12,11 @@ const studentPostschema = mongoose.Schema({
         default : "1",
         validate : [{validator: value => value, msg: 'Invalid name'}]
     },
+    rollNo : {
+        type: String,
+        required: true,
+        validate : [{validator: value => value, msg: 'Invalid name'}]
+    },
     straightness : {
         type: String,
         default : "false",

@@ -13,6 +13,7 @@ router.post('/signup',  async (req,res) => {
     const newstud = new studmod({
         studentName : req.body.studentName,
         mobileNumber : req.body.mobileNumber,
+        rollNo : req.body.rollNo,
         email : req.body.email,
         password : req.body.password
     })
@@ -28,10 +29,14 @@ router.post('/login',   async (req,res) => {
     if (req.body.password !== checkauth.password){
         return res.json({antenna : "shit yar hands"})
     }
-    
+    const response = {
+        studentName : checkauth.studentName,
+        email : checkauth.email,
+        status : "login Succe5fu!!"
+    }
 // create and assign tokens
    const token = jwt.sign({_id : checkauth._id}, process.env.SECRET_TOKEN)
-   res.header("auth-token", token).send(token)
+   res.header("auth-token", token).json(response)
    
 })
 

@@ -12,6 +12,11 @@ const studentDetailschema = mongoose.Schema({
         required: true,
         validate : [{validator: value => value, msg: 'Invalid name'}]
     },
+    rollNo : {
+        type: String,
+        required: true,
+        validate : [{validator: value => value, msg: 'Invalid name'}]
+    },
     email : {
         type: String,
         required: true,
