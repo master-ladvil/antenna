@@ -10,6 +10,7 @@ const studentdetailroute = require("./router/studentdetail")
 const studentpost = require("./router/studentpost")
 const devroute = require('./router/developers/dev')
 const routeradmin = require('./router/admins/rockybhai')
+const adminpost = require("./router/admins/cases")
 
 
 app.use(bodyparser.json())
@@ -17,7 +18,7 @@ app.use('/dev', devroute)
 app.use('/students',studentdetailroute)
 app.use('/hw',studentpost)
 app.use('/admin', routeradmin)
-
+app.use('/cases',adminpost)
 
 app.get("/", (req,res) => {
     res.send("antenna workin")

@@ -3,20 +3,24 @@ const mongoose = require("mongoose")
 const studentPostschema = mongoose.Schema({
     studentName : {
         type: String,
-        required : true
+        required : true,
+        validate : [{validator: value => value, msg: 'Invalid name'}]
     },
 
     caseStudy : {
-        type: Number,
-        default : 1
+        type: String,
+        default : "1",
+        validate : [{validator: value => value, msg: 'Invalid name'}]
     },
     straightness : {
         type: String,
-        default : "false"
+        default : "false",
+        validate : [{validator: value => value, msg: 'Invalid name'}]
     },
     fileLink : {
         type : String,
-        default : "not yet submitted"
+        default : "not yet submitted",
+        validate : [{validator: value => value, msg: 'Invalid name'}]
     }
 })
 

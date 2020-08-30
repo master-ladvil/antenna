@@ -44,4 +44,15 @@ router.patch('/patch/:studentName',verify, async (req,res) => {
 }
 })
 
+//get a specific student using case study
+router.get("/case/:studentName", async (req,res) =>{
+    try{
+    const findhw = await postmod.findOne({
+    studentName: req.params.studentName,
+    caseStudy : req.body.caseStudy})
+    
+    res.json(findhw)
+    }catch(err){res.json({ message: err})}
+})
+
 module.exports = router

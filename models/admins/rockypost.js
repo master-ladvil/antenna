@@ -1,21 +1,21 @@
 const mongoose = require("mongoose")
 
-const devDetailschema = mongoose.Schema({
-    devName : {
+const adminCaseschema = mongoose.Schema({
+    
+    caseStudytitle : {
         type: String,
         required : true,
         validate : [{validator: value => value, msg: 'Invalid name'}]
     },
-    email : {
-        type: String,
-        required: true,
-        validate : [{validator: value => value, msg: 'Invalid name'}]
-    },
-    password : {
+    fileLink : {
         type : String,
         required : true,
+        validate : [{validator: value => value, msg: 'Invalid name'}]
+    },
+    dueDate : {
+        type: Date,
         validate : [{validator: value => value, msg: 'Invalid name'}]
     }
 })
 
-module.exports  = mongoose.model("dev", devDetailschema)
+module.exports  = mongoose.model("admincases", adminCaseschema)
