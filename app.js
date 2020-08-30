@@ -34,6 +34,8 @@ const url = process.env.url
  mongoose.connect(url,{useNewUrlParser : true, useUnifiedTopology: true},() => {console.log("connected to db")})
 
 
-const PORT = process.env.port || 4500
+ app.set('port', process.env.PORT || 4500)
 
-app.listen(PORT, () => {console.log(`antenna fixed on ${PORT}`)})
+
+
+ app.listen(app.get('port'), () => console.log('listening on port ' + app.get('port')))
