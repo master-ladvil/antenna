@@ -2,8 +2,11 @@ const router = require("express").Router()
 const mongoose = require("mongoose")
 const casemod = require("../../models/admins/rockypost")
 
-router.get("/", (req,res) => {
-    res.send("homeWorks")
+router.get("/", async (req,res) => {
+    try{
+    const getcases = await casemod.find()
+        res.json(getcases)
+    }catch(err){res.json({message : err})}
 })
 
 router.post("/", async(req,res)=>{
