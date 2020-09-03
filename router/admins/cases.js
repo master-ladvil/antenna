@@ -16,7 +16,7 @@ router.post("/", async(req,res)=>{
         dueDate : req.body.dueDate
     })
     try{
-    const upcases = await casemod.save()
+    const upcases = await postcases.save()
     res.json(upcases)
     }catch(err){res.json({message:err})}
 })
