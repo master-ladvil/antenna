@@ -51,10 +51,9 @@ router.patch('/patch/:rollNo',verify, async (req,res) => {
 })
 
 //get a specific student using case study
-router.get("/case/:rollNo", async (req,res) =>{
+router.post("/case", async (req,res) =>{
     try{
-    const findhw = await postmod.findOne({
-    rollNo: req.params.rollNo,
+    const findhw = await postmod.find({
     caseStudy : req.body.caseStudy})
     
     res.json(findhw)
