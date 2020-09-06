@@ -7,7 +7,7 @@ require("dotenv/config")
 const app = express()
 
 //test
-const testroute = require("./test/test")
+//const testroute = require("./test/test")
 const studentdetailroute = require("./router/studentdetail")
 const studentpost = require("./router/studentpost")
 const devroute = require('./router/developers/dev')
@@ -34,7 +34,7 @@ app.use('/admin', routeradmin)
 app.use('/cases',adminpost)
 
 //test
-app.use('/test', testroute)
+//app.use('/test', testroute)
 
 
 app.get("/", (req,res) => {
